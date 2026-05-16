@@ -1,1 +1,124 @@
-// home
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.home {
+  width: 100%;
+  position: relative;
+  &:after {
+    @include line-gradient;
+  }
+
+  &__grid {
+    @include grid(repeat(auto-fit, minmax(492px, 1fr)));
+    width: 100%;
+  }
+
+  &__desc {
+    @include flex(column, $align: start, $gap: 15px);
+    padding: 50px 30px;
+
+    &-title {
+      font-size: $f-sizeH1;
+      text-indent: 0;
+      span {
+        @include font-style(rgba($black-rgb, 0.8), $font-main, $f-sizeH3);
+      }
+    }
+
+    &-subtitle {
+      @include font-style(transparent, $font-second, $f-size24, $w-SemiBold);
+      background: linear-gradient(135deg, rgb(160, 45, 255), #00a2ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 3%;
+    }
+
+    &-text {
+      max-width: 600px;
+      margin-bottom: 5%;
+    }
+  }
+
+  &__visual {
+    @include flex;
+    width: 100%;
+    min-height: 350px;
+    perspective: 1000px;
+    position: relative;
+    overflow: clip;
+    contain: paint;
+
+    &-cube {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 12s infinite linear;
+      will-change: transform;
+
+      .cube__face {
+        @include position(absolute, 0, 0);
+        width: 100%;
+        height: 100%;
+        @include flex;
+        @include font-style(
+          rgba($black-rgb, 0.7),
+          $font-second,
+          $f-size18,
+          $w-bold
+        );
+
+        background: rgba($white-rgb, 0.2);
+        border: 1px solid rgba($black-rgb, 0.6);
+        backdrop-filter: blur(3px);
+        box-shadow: inset 0 0 15px $cub-color;
+      }
+
+      .cube__face--front {
+        transform: rotateY(0deg) translateZ(100px);
+      }
+      .cube__face--back {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+      .cube__face--right {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      .cube__face--left {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+      .cube__face--top {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .cube__face--bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+    }
+
+    @keyframes rotateCube {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__desc {
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    &__desc {
+      padding: 0;
+    }
+  }
+}
