@@ -8,10 +8,37 @@
       name="description"
       content="Портфолио фронтенд-разработчика / Frontend Developer Portfolio"
     />
+    <link
+      rel="icon"
+      href="images/favicon-white.webp"
+      type="image/webp"
+      sizes="32x32"
+    />
+    <link
+      rel="preload"
+      href="fonts/Montserrat-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Marmelad-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Montserrat-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <link
       rel="stylesheet"
-      href="styles/main.css"
+      href="./styles/main.css"
       media="print"
       onload="this.media = 'all'"
     />
@@ -23,6 +50,478 @@
     />
   </head>
   <body>
-    <script src="js/main.min.js" defer></script>
+    <header class="header">
+  <div class="container header__container">
+    <a
+      href="/"
+      class="header__logo"
+      aria-label="my-logo"
+      data-i18n-aria="aria-logo"
+    >
+      <svg class="header__logo-icon" aria-hidden="true">
+        <use href="images/icons/stack.svg#logo-initial"></use>
+      </svg>
+    </a>
+
+    <nav class="header__menu" aria-label="Main navigation">
+      <ul class="header__menu-list">
+        <li class="header__menu-item active">
+          <a href="#Home" class="header__menu-link" data-i18n="nav-home"
+            >Home</a
+          >
+        </li>
+        <li class="header__menu-item">
+          <a href="#Projects" class="header__menu-link" data-i18n="nav-projects"
+            >Project</a
+          >
+        </li>
+        <li class="header__menu-item">
+          <a href="#Contacts" class="header__menu-link" data-i18n="nav-contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="header__control-btns"
+      role="group"
+      aria-label="Appearance and language"
+      data-i18n-aria="aria-ctrl-group"
+    >
+      <button
+        class="ctrl-btn lang-btn"
+        data-i18n="lang-name"
+        aria-label="Switch language"
+        data-i18n-aria="aria-language"
+      >
+        RU
+      </button>
+      <button
+        class="ctrl-btn theme-btn"
+        aria-label="Switch color theme"
+        data-i18n-aria="aria-theme"
+      >
+        <svg aria-hidden="true">
+          <use href="images/icons/stack.svg#sun-icon"></use>
+        </svg>
+      </button>
+    </div>
+    <button
+      class="header__burger burger-btn"
+      aria-label="open-menu"
+      aria-expanded="false"
+      data-i18n-aria="aria-menu"
+    >
+      <span class="burger-line"></span>
+    </button>
+  </div>
+</header>
+
+    <!-- ************************** -->
+    <main>
+      <section class="home" id="Home">
+  <h1 class="visually-hidden" data-i18n="home-title">Home</h1>
+  <div class="home__container container">
+    <div class="home__grid">
+      <article class="home__desc">
+        <h2 class="home__desc-title" data-i18n="home-desc-title">
+          Hi,<br />
+          <span class="title-span">I`m</span> Andrey
+        </h2>
+        <span class="home__desc-subtitle" data-i18n="home-desc-sub">
+          Frontend developer
+        </span>
+        <p class="home__desc-text" data-i18n="home-desc-text">
+          I create responsive interfaces with a focus on accessibility, clean
+          code, and a thoughtful user experience. I combine modern layouts with
+          effective solutions based on pure JavaScript.
+        </p>
+        <a
+          href="#Footer"
+          class="home__btn big-btn"
+          aria-label="go to contacts"
+          data-i18n-aria="home-btn"
+        >
+          Contact
+        </a>
+      </article>
+      <article class="home__visual">
+        <h2 class="visually-hidden" data-i18n="home__visual-title">
+          Визуальная презентация куба
+        </h2>
+        <div class="home__visual-cube" aria-hidden="true">
+          <div class="cube__face cube__face--front">HTML</div>
+          <div class="cube__face cube__face--back">CSS</div>
+          <div class="cube__face cube__face--right">JS</div>
+          <div class="cube__face cube__face--left">SASS</div>
+          <div class="cube__face cube__face--top">GULP</div>
+          <div class="cube__face cube__face--bottom">BEM</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+      <!-- ************************** -->
+      <section class="project" id="Projects">
+  <h2 class="visually-hidden" data-i18n="project__section-title">Projects</h2>
+  <div class="container project__container">
+    <article class="project__desc">
+      <h2 class="project__title" data-i18n="project-title">Мои работы.</h2>
+      <p class="project__desc-text" data-i18n="project-text">
+        Здесь вы можете ознакомиться с некоторыми из моих работ.
+      </p>
+    </article>
+    <article class="project__slider">
+      <h2 class="visually-hidden" data-i18n="project__slider-title">
+        Примеры работ
+      </h2>
+      <div class="project__slider-viewport" aria-live="polite">
+        <div class="project__slider-track">
+          <div class="project__slider-item">
+            <img
+              src="images/architecture-img.webp"
+              alt="Макет архитектурного бюро Architecture - десктопная версия."
+              data-i18n-alt="project-arch-alt"
+              width="960"
+              height="540"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="project__slider-item">
+            <img
+              src="images/mob-architect.webp"
+              alt="Адаптивная мобильная версия сайта Architecture."
+              data-i18n-alt="project-mobArch-alt"
+              width="960"
+              height="540"
+              loading="lazy"
+            />
+
+            <div class="project__slider-links">
+              <a
+                href="https://github.com/Qooler-667/Architecture.git"
+                class="project__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+              <a
+                href="https://qooler-667.github.io/Architecture/"
+                class="project__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project__slider-item">
+            <img
+              src="images/coffee-img.webp"
+              alt="Дизайн сайта кофейни Bean Scene."
+              data-i18n-alt="project-coffee-alt"
+              width="960"
+              height="540"
+              loading="lazy"
+            />
+          </div>
+          <div class="project__slider-item">
+            <img
+              src="images/mob-coffee.webp"
+              alt="Мобильная версия сайта Bean Scene."
+              data-i18n-alt="project-mobCoffee-alt"
+              width="960"
+              height="540"
+              loading="lazy"
+            />
+
+            <div class="project__slider-links">
+              <a
+                href="https://github.com/Qooler-667/Bean-Scene.git"
+                class="project__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+              <a
+                href=" https://qooler-667.github.io/Bean-Scene/"
+                class="project__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project__slider-btns">
+        <button
+          class="slider__btn prev-btn"
+          aria-label="Предыдущий слайд"
+          data-i18n-aria="project-prev-btn"
+        >
+          <svg class="slider__btn-icon" aria-hidden="true">
+            <use href="images/icons/stack.svg#left-arrow"></use>
+          </svg>
+        </button>
+        <button
+          class="slider__btn next-btn"
+          aria-label="Следующий слайд"
+          data-i18n-aria="project-next-btn"
+        >
+          <svg class="slider__btn-icon" aria-hidden="true">
+            <use href="images/icons/stack.svg#right-arrow"></use>
+          </svg>
+        </button>
+      </div>
+    </article>
+  </div>
+</section>
+
+      <!-- ************************** -->
+      <section class="access" id="Contacts">
+  <h2 class="visually-hidden" data-i18n="access-title">Контакты</h2>
+  <div class="access__container container">
+    <div class="access__header">
+      <h2 class="access__header-title" data-i18n="contact&about">
+        Контакты & Обо мне
+      </h2>
+      <p class="access__header-text" data-i18n="contact-text">
+        У вас есть проект, который требует реализации, или вы просто хотите
+        обсудить сотрудничество? Заполните форму ниже, и я свяжусь с вами в
+        ближайшее время, чтобы обсудить детали.
+      </p>
+    </div>
+
+    <div class="access__grid">
+      <section class="access__connect">
+        <h3 class="access__connect-title" data-i18n="access-grid-title">
+          Связь
+        </h3>
+        <span class="access__connect-subtitle">Connecting people</span>
+        <form
+          class="access__form"
+          action="https://formspree.io/f/xwvygegd"
+          method="post"
+        >
+          <div class="access__form-group">
+            <label class="sr-only" for="name" data-i18n="form-name"
+              >Ваше имя</label
+            >
+            <input
+              class="access__form-input"
+              id="name"
+              name="Name"
+              type="text"
+              placeholder="Имя"
+              data-i18n-placeholder="placeholder-name"
+              aria-label="Введите ваше имя"
+              data-i18n-aria="form-name-aria"
+              autocomplete="name"
+              maxlength="50"
+              required
+            />
+            <label class="sr-only" for="email" data-i18n="form-email"
+              >Электронная почта</label
+            >
+            <input
+              class="access__form-input"
+              id="email"
+              name="Email"
+              type="email"
+              placeholder="Email"
+              data-i18n-placeholder="placeholder-email"
+              aria-label="Введите Email"
+              data-i18n-aria="form-email-aria"
+              autocomplete="email"
+              maxlength="50"
+              required
+            />
+            <label class="sr-only" for="form-area" data-i18n="form-message"
+              >Сообщение</label
+            >
+            <textarea
+              class="access__form-area"
+              rows="1"
+              id="form-area"
+              name="Message"
+              placeholder="Ваше сообщение"
+              data-i18n-placeholder="placeholder-message"
+              maxlength="350"
+              aria-label="Введите ваше сообщение"
+              data-i18n-aria="form-message-aria"
+              autocomplete="off"
+            ></textarea>
+          </div>
+          <div class="access__form-btns">
+            <button
+              class="access__form-btn form-btn"
+              type="reset"
+              aria-label="form reset button"
+              data-i18n="form-reset"
+              data-i18n-aria="form-reset"
+            >
+              сброс
+            </button>
+            <button
+              class="access__form-btn form-btn"
+              type="submit"
+              aria-label="form submit button"
+              data-i18n="form-submit"
+              data-i18n-aria="form-submit"
+            >
+              Отправить
+            </button>
+          </div>
+        </form>
+      </section>
+      <!-- =================================================== -->
+      <section class="access__about">
+        <h3 class="access__about-title" data-i18n="about-title">Обо мне</h3>
+
+        <p class="access__about-text" data-i18n="about-text">
+          Frontend-разработчик который ставит качество кода и визуальное
+          соответствие макету на первое место. Мой путь — это не копирование
+          шаблонов, а создание собственных решений через практику и глубокое
+          погружение в инструменты автоматизации.
+        </p>
+        <ul class="access__about-stack access__about-list">
+          <li class="access__about-item" data-i18n="about-stack">Мой стек:</li>
+          <li class="access__about-item">HTML5</li>
+          <li class="access__about-item">SaSS/CSS3</li>
+          <li class="access__about-item">JS ES6</li>
+          <li class="access__about-item">Gulp</li>
+          <li class="access__about-item">Git</li>
+          <li class="access__about-item">Bem</li>
+        </ul>
+        <ul class="access__about-quality access__about-list">
+          <li class="access__about-item" data-i18n="about-quality">
+            Мои качества:
+          </li>
+          <li class="access__about-item" data-i18n="about-response">
+            Ответственность
+          </li>
+          <li class="access__about-item" data-i18n="about-independ">
+            Самостоятельность
+          </li>
+          <li class="access__about-item" data-i18n="about-develop">
+            Стремление к развитию
+          </li>
+          <li class="access__about-item" data-i18n="about-punctual">
+            Пунктуальность
+          </li>
+          <li class="access__about-item" data-i18n="about-perform">
+            Исполнительность
+          </li>
+          <li class="access__about-item" data-i18n="about-habits">
+            Отсутствие вредных привычек
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <!-- ************************** -->
+    <footer class="footer" id="Footer">
+  <div class="container footer__container">
+    <section class="footer__content">
+      <h3 class="footer__content-title" data-i18n="footer-title">
+        Давайте работать вместе
+      </h3>
+      <div class="footer__content-social">
+        <a
+          href="https://t.me/AndreyKravchenko80"
+          class="footer__social-link"
+          aria-label="Telegram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="footer__social-icon" aria-hidden="true">
+            <use href="images/icons/stack.svg#telegramm"></use>
+          </svg>
+        </a>
+        <a
+          href="https://vk.com/id555060809"
+          class="footer__social-link"
+          aria-label="VK"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="footer__social-icon" aria-hidden="true">
+            <use href="images/icons/stack.svg#vk-icon"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=100036977566748"
+          class="footer__social-link"
+          aria-label="Facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="footer__social-icon" aria-hidden="true">
+            <use href="images/icons/stack.svg#facebook"></use>
+          </svg>
+        </a>
+      </div>
+    </section>
+    <div class="footer__rights">
+      <small class="footer__rights-copy">&copy; 2026 All Rights Reserved</small>
+    </div>
+  </div>
+</footer>
+
+    <!-- ************************** -->
+    <div class="burger--wrapper">
+  <div class="burger">
+    <div class="burger__menu">
+      <button class="burger__exit exit-btn">
+        <span class="exit-line"></span>
+      </button>
+
+      <ul class="burger__menu-list">
+        <li class="burger__menu-item">
+          <a href="#Home" class="burger__menu-link" data-i18n="nav-home"
+            >Home</a
+          >
+        </li>
+        <li class="burger__menu-item">
+          <a href="#Projects" class="burger__menu-link" data-i18n="nav-projects"
+            >Project</a
+          >
+        </li>
+        <li class="burger__menu-item">
+          <a href="#Contacts" class="burger__menu-link" data-i18n="nav-contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+
+      <div
+        class="burger__control-btns"
+        role="group"
+        aria-label="Appearance and language"
+      >
+        <button
+          class="ctrl-btn lang-btn"
+          data-i18n="lang-name"
+          aria-label="Switch language"
+        >
+          RU
+        </button>
+        <button class="ctrl-btn theme-btn" aria-label="Switch color theme">
+          <svg aria-hidden="true">
+            <use href="images/icons/stack.svg#sun-icon"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="./js/main.min.js" defer></script>
   </body>
 </html>
