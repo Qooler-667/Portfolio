@@ -14,6 +14,35 @@
 - **Task Runner:** Gulp (автоматизация сборки, минификация, оптимизация ресурсов).
 - **Version Control:** Git & GitHub (разработка велась по Feature Branch Workflow).
 
+## 📱 Превью проекта & Технические метрики (UI & Performance)
+
+<div align="center">
+  <table style="border: none; border-collapse: collapse; background: none; width: 100%;">
+    <tr>
+      <td align="center" valign="top" colspan="2" style="border: none; padding: 10px;">
+        <strong>Dark Mode (Desktop Interface)</strong><br><br>
+        <img src="./src/images/black-desc.png" alt="Тёмная тема десктоп" width="850" style="border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" style="border: none; padding: 20px 10px; width: 35%;">
+        <strong>Mobile Version (Light)</strong><br><br>
+        <img src="./src/images/white-mob.png" alt="Светлая мобильная версия" width="220" style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+      </td>
+      <td align="center" valign="middle" style="border: none; padding: 20px 10px; width: 65%;">
+        <strong>Google Lighthouse Audit (Clean Environment)</strong><br><br>
+        <img src="./src/images/Light-house.png" alt="Показатели Google Lighthouse" width="550" style="border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" colspan="2" style="border: none; padding: 20px 10px;">
+        <strong>📋 Итоговый статус сборки и валидация</strong><br><br>
+        <img src="./src/images/params.png" alt="Статус сборки проекта" width="700" style="border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);">
+      </td>
+    </tr>
+  </table>
+</div>
+
 ## 💡 Ключевой функционал
 
 - 🌍 **Мультиязычность (RU / EN):** Полноценная локализация интерфейса через дата-атрибуты (`data-i18n`) со словарем данных и автоматическим сохранением выбора пользователя в `localStorage`.
