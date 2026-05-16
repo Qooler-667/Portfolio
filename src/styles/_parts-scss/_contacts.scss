@@ -1,1 +1,192 @@
-// contacts
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.access {
+  &__container {
+    @include flex(column, $gap: 20px);
+  }
+
+  &__header {
+    @include flex(column, $gap: 20px);
+    max-width: 70%;
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+    &:after {
+      @include line-gradient;
+    }
+  }
+
+  &__grid {
+    @include grid(repeat(auto-fit, minmax(462px, 1fr)), null, 20px);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  &__connect,
+  &__about {
+    @include grid($cols: 1fr, $rows: auto auto 1fr, $gap: 30px);
+    padding: 20px;
+    margin-bottom: 0;
+  }
+  &__connect {
+    grid-template-areas:
+      'title'
+      'spacer'
+      'form';
+    gap: 15px;
+
+    &-title {
+      grid-area: title;
+    }
+
+    &-subtitle {
+      @include font-style(
+        transparent,
+        $font-accent,
+        $f-size16,
+        $w-bold,
+        0.15em
+      );
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, rgb(140, 0, 255), #00a2ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+  &__form {
+    grid-area: form;
+    align-self: center;
+    @include flex(column, stretch, center, $gap: 75px);
+    margin-inline: auto;
+    width: clamp(80%, 550px, 100%);
+
+    &-group {
+      @include flex(column, $gap: 30px);
+      width: clamp(80%, 550px, 100%);
+    }
+
+    &-input,
+    &-area {
+      width: 100%;
+      padding: 5px 10px;
+      border-bottom: 1px solid $base-black;
+      @include font-style(
+        rgba($black-rgb, 0.8),
+        $font-accent,
+        16px,
+        $w-normal,
+        normal
+      );
+      border-radius: 0;
+    }
+    &-area {
+      max-height: 200px;
+      resize: none;
+      appearance: none;
+      -webkit-appearance: none;
+      field-sizing: content;
+      word-break: break-all;
+      overflow-wrap: break-word;
+    }
+
+    &-btns {
+      @include flex($gap: 20px);
+      margin-inline: auto;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    ::placeholder {
+      color: rgba($black-rgb, 0.8);
+    }
+  }
+
+  &__about {
+    display: grid;
+    @include grid(repeat(2, auto), auto 1fr auto, $gap: 30px);
+    grid-template-areas:
+      'title title'
+      'text  text'
+      'stack quality';
+
+    &-title {
+      grid-area: title;
+    }
+
+    &-text {
+      grid-area: text;
+      align-self: center;
+    }
+
+    &-list {
+      @include flex(column, start, center, $gap: 20px);
+    }
+
+    &-item {
+      @include font-style(
+        transparent,
+        $font-second,
+        $f-size16,
+        $w-bold,
+        0.07em
+      );
+      background: linear-gradient(135deg, rgb(170, 65, 255), #0087d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      padding-bottom: 5px;
+      position: relative;
+      &:first-child {
+        font-size: $f-size20;
+      }
+      &::after {
+        @include line-gradient;
+      }
+    }
+
+    &-stack {
+      grid-area: stack;
+      align-self: start;
+    }
+
+    &-quality {
+      grid-area: quality;
+      align-self: start;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__header {
+      max-width: 100%;
+    }
+    &__grid {
+      grid-template-columns: 1fr;
+      padding: 0;
+      gap: 40px;
+    }
+
+    &__form {
+      gap: 50px;
+    }
+  }
+  @media (max-width: 425px) {
+    &__connect {
+      padding: 0;
+    }
+
+    &__about {
+      gap: 30px 20px;
+      padding: 0;
+    }
+  }
+}
