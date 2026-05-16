@@ -1,1 +1,105 @@
-// header
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.header {
+  @include flex;
+  margin-bottom: 50px;
+  box-shadow: 0 1px 5px rgba(138, 138, 138, 0.486);
+
+  &__container {
+    @include flex($justify: space-between, $gap: 55px);
+    padding-block: clamp(10px, 2.6vw, 20px);
+    position: relative;
+  }
+
+  &__logo {
+    @include flex;
+    width: clamp(45px, 9vw, 70px);
+    aspect-ratio: 1 / 1;
+
+    flex-shrink: 0;
+
+    &-icon {
+      @include icon-style(
+        $c1: rgba($black-rgb, 0.5),
+        $c2: rgba($black-rgb, 0.7)
+      );
+    }
+
+    &:hover {
+      .header__logo-icon {
+        animation: logoAnima 0.3s infinite;
+      }
+    }
+    @keyframes logoAnima {
+      0% {
+        --color-1: #{rgba($black-rgb, 0.3)};
+        --color-2: #{rgba($black-rgb, 0.7)};
+      }
+
+      100% {
+        --color-1: #{rgba($black-rgb, 0.7)};
+        --color-2: #{rgba($black-rgb, 0.3)};
+      }
+    }
+  }
+
+  &__menu {
+    @include flex;
+    width: 100%;
+    &-list {
+      @include flex($justify: space-between);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    &-item {
+      padding: 5px 10px;
+
+      &:hover,
+      &.active {
+        .header__menu-link {
+          color: $base-black;
+        }
+      }
+      &:focus-visible {
+        outline: 2px solid $base-black;
+        outline-offset: 4px;
+      }
+    }
+
+    &-link {
+      @include font-style(
+        rgba($black-rgb, 0.6),
+        $font-second,
+        $f-size20,
+        $w-bold,
+        0.1em
+      );
+      transition: color 0.3s;
+    }
+  }
+
+  &__control-btns {
+    @include flex($gap: 15px);
+    padding: 5px;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    &__menu,
+    &__control-btns {
+      display: none;
+    }
+    &__burger {
+      display: flex;
+    }
+  }
+}
