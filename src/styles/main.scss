@@ -1,0 +1,14 @@
+@use 'reset.scss' as *;
+@use 'fonts.scss' as *;
+@use 'vars.scss' as *;
+@use 'mixins.scss' as *;
+@use 'global.scss' as *;
+@use 'btns.scss' as *;
+// ------------------------
+
+@use '_parts-scss/header';
+@use '_parts-scss/home';
+@use '_parts-scss/projects';
+@use '_parts-scss/contacts';
+@use '_parts-scss/footer';
+@use '_parts-scss/burger';
