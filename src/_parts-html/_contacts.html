@@ -1,1 +1,142 @@
-<!-- contacts -->
+<section class="access" id="Contacts">
+  <h2 class="visually-hidden" data-i18n="access-title">Контакты</h2>
+  <div class="access__container container">
+    <div class="access__header">
+      <h2 class="access__header-title" data-i18n="contact&about">
+        Контакты & Обо мне
+      </h2>
+      <p class="access__header-text" data-i18n="contact-text">
+        У вас есть проект, который требует реализации, или вы просто хотите
+        обсудить сотрудничество? Заполните форму ниже, и я свяжусь с вами в
+        ближайшее время, чтобы обсудить детали.
+      </p>
+    </div>
+
+    <div class="access__grid">
+      <section class="access__connect">
+        <h3 class="access__connect-title" data-i18n="access-grid-title">
+          Связь
+        </h3>
+        <span class="access__connect-subtitle">Connecting people</span>
+        <form
+          class="access__form"
+          action="https://formspree.io/f/xwvygegd"
+          method="post"
+        >
+          <div class="access__form-group">
+            <label class="sr-only" for="name" data-i18n="form-name"
+              >Ваше имя</label
+            >
+            <input
+              class="access__form-input"
+              id="name"
+              name="Name"
+              type="text"
+              placeholder="Имя"
+              data-i18n-placeholder="placeholder-name"
+              aria-label="Введите ваше имя"
+              data-i18n-aria="form-name-aria"
+              autocomplete="name"
+              maxlength="50"
+              required
+            />
+            <label class="sr-only" for="email" data-i18n="form-email"
+              >Электронная почта</label
+            >
+            <input
+              class="access__form-input"
+              id="email"
+              name="Email"
+              type="email"
+              placeholder="Email"
+              data-i18n-placeholder="placeholder-email"
+              aria-label="Введите Email"
+              data-i18n-aria="form-email-aria"
+              autocomplete="email"
+              maxlength="50"
+              required
+            />
+            <label class="sr-only" for="form-area" data-i18n="form-message"
+              >Сообщение</label
+            >
+            <textarea
+              class="access__form-area"
+              rows="1"
+              id="form-area"
+              name="Message"
+              placeholder="Ваше сообщение"
+              data-i18n-placeholder="placeholder-message"
+              maxlength="350"
+              aria-label="Введите ваше сообщение"
+              data-i18n-aria="form-message-aria"
+              autocomplete="off"
+            ></textarea>
+          </div>
+          <div class="access__form-btns">
+            <button
+              class="access__form-btn form-btn"
+              type="reset"
+              aria-label="form reset button"
+              data-i18n="form-reset"
+              data-i18n-aria="form-reset"
+            >
+              сброс
+            </button>
+            <button
+              class="access__form-btn form-btn"
+              type="submit"
+              aria-label="form submit button"
+              data-i18n="form-submit"
+              data-i18n-aria="form-submit"
+            >
+              Отправить
+            </button>
+          </div>
+        </form>
+      </section>
+      <!-- =================================================== -->
+      <section class="access__about">
+        <h3 class="access__about-title" data-i18n="about-title">Обо мне</h3>
+
+        <p class="access__about-text" data-i18n="about-text">
+          Frontend-разработчик который ставит качество кода и визуальное
+          соответствие макету на первое место. Мой путь — это не копирование
+          шаблонов, а создание собственных решений через практику и глубокое
+          погружение в инструменты автоматизации.
+        </p>
+        <ul class="access__about-stack access__about-list">
+          <li class="access__about-item" data-i18n="about-stack">Мой стек:</li>
+          <li class="access__about-item">HTML5</li>
+          <li class="access__about-item">SaSS/CSS3</li>
+          <li class="access__about-item">JS ES6</li>
+          <li class="access__about-item">Gulp</li>
+          <li class="access__about-item">Git</li>
+          <li class="access__about-item">Bem</li>
+        </ul>
+        <ul class="access__about-quality access__about-list">
+          <li class="access__about-item" data-i18n="about-quality">
+            Мои качества:
+          </li>
+          <li class="access__about-item" data-i18n="about-response">
+            Ответственность
+          </li>
+          <li class="access__about-item" data-i18n="about-independ">
+            Самостоятельность
+          </li>
+          <li class="access__about-item" data-i18n="about-develop">
+            Стремление к развитию
+          </li>
+          <li class="access__about-item" data-i18n="about-punctual">
+            Пунктуальность
+          </li>
+          <li class="access__about-item" data-i18n="about-perform">
+            Исполнительность
+          </li>
+          <li class="access__about-item" data-i18n="about-habits">
+            Отсутствие вредных привычек
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,47 @@
-// vars
+:root {
+  --base-white: #ebebeb;
+  --white-rgb: 255, 255, 255;
+  --base-black: #131313;
+  --black-rgb: 0, 0, 0;
+  --exit-color: #ff5100;
+  --transparent: transparent;
+  --cub-color: #2fd5ff;
+}
+
+$base-white: var(--base-white);
+$white-rgb: var(--white-rgb);
+$base-black: var(--base-black);
+$black-rgb: var(--black-rgb);
+$exit-color: var(--exit-color);
+$transparent: var(--transparent);
+$cub-color: var(--cub-color);
+
+body.dark {
+  --base-white: #000;
+  --white-rgb: 0, 0, 0;
+  --base-black: #fff;
+  --black-rgb: 255, 255, 255;
+  --transparent: 255, 255, 255;
+}
+
+// === fonts ===
+$font-main: 'Inter', sans-serif;
+$font-second: 'Montserrat', sans-serif;
+$font-accent: 'Marmelad', sans-serif;
+
+// === Font-sizes ===
+
+$f-sizeH1: clamp(42px, 5vw, 54px);
+$f-sizeH2: clamp(36px, 5vw, 48px);
+$f-sizeH3: clamp(30px, 5vw, 42px);
+$f-size24: clamp(18px, 3vw, 24px);
+$f-size20: clamp(16px, 3vw, 20px);
+$f-size18: clamp(14px, 5vw, 18px);
+$f-size16: clamp(14px, 3vw, 16px);
+
+// === Font-weight ==
+$w-regular: 400;
+$w-normal: 500;
+$w-SemiBold: 600;
+$w-bold: 700;
+$w-ExtraBold: 800;

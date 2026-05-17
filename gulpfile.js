@@ -57,15 +57,15 @@ function styles() {
         .on('error', scss.logError)
     )
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-    .pipe(gcmq()) // Группируем медиа-запросы для улучшения Performance
-    .pipe(cleanCss()) // Финальное сжатие
+    .pipe(gcmq())
+    .pipe(cleanCss())
     .pipe(dest('docs/styles', { sourcemaps: '.' }))
     .pipe(bs.stream());
 }
 
 // JS
 function scripts() {
-  return src(['src/js/**/_*.js', 'src/js/main.js'])
+  return src(['src/js/_translations.js', 'src/js/**/_*.js', 'src/js/main.js'])
     .pipe(concat('main.min.js'))
     .pipe(
       terser().on('error', (e) => {

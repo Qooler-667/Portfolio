@@ -1,1 +1,91 @@
-// global
+@use 'vars' as *;
+@use 'mixins' as *;
+// ------------------
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background: $base-white;
+  transition:
+    background 0.5s,
+    color 0.5s;
+}
+
+section {
+  margin-bottom: 75px;
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+}
+
+.container {
+  @include flex;
+  width: 100%;
+  max-width: 1440px;
+  padding: 30px 20px;
+  margin-inline: auto;
+}
+
+h2 {
+  @include font-style(
+    rgba($black-rgb, 0.9),
+    $font-accent,
+    $f-sizeH1,
+    $w-SemiBold,
+    0.02em,
+    100%
+  );
+  @media (max-width: 425px) {
+    line-height: 90%;
+  }
+}
+
+h2 {
+  @include font-style(
+    rgba($black-rgb, 0.9),
+    $font-accent,
+    $f-sizeH2,
+    $w-SemiBold,
+    0.1em
+  );
+}
+
+h3 {
+  @include font-style(
+    rgba($black-rgb, 0.9),
+    $font-accent,
+    $f-sizeH3,
+    $w-SemiBold,
+    0.2em,
+    $t-indent: null
+  );
+}
+
+p {
+  @include font-style(
+    rgba($black-rgb, 0.7),
+    $font-main,
+    $f-size18,
+    $w-SemiBold,
+    0.08em,
+    150%
+  );
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

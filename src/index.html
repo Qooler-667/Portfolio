@@ -8,6 +8,33 @@
       name="description"
       content="Портфолио фронтенд-разработчика / Frontend Developer Portfolio"
     />
+    <link
+      rel="icon"
+      href="images/favicon-white.webp"
+      type="image/webp"
+      sizes="32x32"
+    />
+    <link
+      rel="preload"
+      href="fonts/Montserrat-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Marmelad-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Montserrat-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <link
       rel="stylesheet"
@@ -23,6 +50,19 @@
     />
   </head>
   <body>
+    @@include('_parts-html/_header.html')
+    <!-- ************************** -->
+    <main>
+      @@include('_parts-html/_home.html')
+      <!-- ************************** -->
+      @@include('_parts-html/_projects.html')
+      <!-- ************************** -->
+      @@include('_parts-html/_contacts.html')
+    </main>
+    <!-- ************************** -->
+    @@include('_parts-html/_footer.html')
+    <!-- ************************** -->
+    @@include('_parts-html/_burger.html')
     <script src="js/main.min.js" defer></script>
   </body>
 </html>

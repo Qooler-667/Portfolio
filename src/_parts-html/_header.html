@@ -1,1 +1,66 @@
-<!-- header -->
+<header class="header">
+  <div class="container header__container">
+    <a
+      href="/"
+      class="header__logo"
+      aria-label="my-logo"
+      data-i18n-aria="aria-logo"
+    >
+      <svg class="header__logo-icon" aria-hidden="true">
+        <use href="images/icons/stack.svg#logo-initial"></use>
+      </svg>
+    </a>
+
+    <nav class="header__menu" aria-label="Main navigation">
+      <ul class="header__menu-list">
+        <li class="header__menu-item active">
+          <a href="#Home" class="header__menu-link" data-i18n="nav-home"
+            >Home</a
+          >
+        </li>
+        <li class="header__menu-item">
+          <a href="#Projects" class="header__menu-link" data-i18n="nav-projects"
+            >Project</a
+          >
+        </li>
+        <li class="header__menu-item">
+          <a href="#Contacts" class="header__menu-link" data-i18n="nav-contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="header__control-btns"
+      role="group"
+      aria-label="Appearance and language"
+      data-i18n-aria="aria-ctrl-group"
+    >
+      <button
+        class="ctrl-btn lang-btn"
+        data-i18n="lang-name"
+        aria-label="Switch language"
+        data-i18n-aria="aria-language"
+      >
+        RU
+      </button>
+      <button
+        class="ctrl-btn theme-btn"
+        aria-label="Switch color theme"
+        data-i18n-aria="aria-theme"
+      >
+        <svg aria-hidden="true">
+          <use href="images/icons/stack.svg#sun-icon"></use>
+        </svg>
+      </button>
+    </div>
+    <button
+      class="header__burger burger-btn"
+      aria-label="open-menu"
+      aria-expanded="false"
+      data-i18n-aria="aria-menu"
+    >
+      <span class="burger-line"></span>
+    </button>
+  </div>
+</header>
